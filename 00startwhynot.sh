@@ -2,6 +2,7 @@ sudo zerotier-one -d
 sleep 2
 sudo rm -rf /tmp/onedrive
 sudo rm -rf /tmp/rclone
+sudo mkdir /tmp/ariadown
 sudo mkdir /tmp/rclone
 sudo mkdir /tmp/onedrive
 sudo rclone mount e5: /tmp/onedrive --allow-non-empty --daemon --vfs-cache-mode writes --allow-other --cache-dir /tmp/rclone && df -hl
@@ -24,3 +25,5 @@ sudo nethogs
 #ngxadmin:7070
 #ngxcloud:8090
 #e5renew:1066
+#ariang:6880
+#aria:6800
