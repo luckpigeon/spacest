@@ -1,7 +1,7 @@
 {
     "name": "CodeSpace",
     "service": "dev-container",
-	"forwardPorts": [6080, 6901],
+	"forwardPorts": [6800, 6880],
     "dockerComposeFile": [    
       "docker-compose.yml"
     ],

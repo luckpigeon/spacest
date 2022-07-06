@@ -1,7 +1,11 @@
 {
-	"name": "My Codespace",
-
-	"build": {
-		"dockerfile": "Dockerfile"
-	}
+    "name": "CodeSpace",
+    "service": "dev-container",
+	"forwardPorts": [8080, 3000],
+    "dockerComposeFile": [    
+      "docker-compose.yml"
+    ],
+    "extensions": [
+        "ms-dotnettools.csharp"
+    ]
 }

@@ -2,15 +2,34 @@ version: '3.8'
  
 services:
   dev-container:
-    image: mcr.microsoft.com/dotnet/sdk:6.0-alpine
+    image: p3terx/ariang
     volumes:
       - ..:/workspace:cached
     depends_on:
-      - redis
+      - aria2-pro
     links:
-      - "redis:redis"
-    environment:
-      - 'App_ConnectionStrings__Redis=redis'   
-    command: /bin/sh -c "while sleep 1000; do :; done"
-  redis:
-    image: redis:6.2-alpine
+      - "aria2-pro:aria2-pro"
+    command: --port 6880 --ipv6
+    network_mode: host
+  aria2-pro:
+      image: p3terx/aria2-pro
+      environment:
+      - PUID=65534
+      - PGID=65534
+      - UMASK_SET=022
+      - RPC_SECRET=passwd
+      - RPC_PORT=6800
+      - LISTEN_PORT=6888
+      - DISK_CACHE=64M
+      - IPV6_MODE=false
+      - SPECIAL_MODE=rclone
+      - UPDATE_TRACKERS=true
+      - CUSTOM_TRACKER_URL=
+      - TZ=Asia/Shanghai
+      volumes:
+      - ${PWD}/config:/config
+      - /workspace:/downloads
+# If you use host network mode, then no port mapping is required.
+# This is the easiest way to use IPv6 networks.
+      network_mode: host
+      restart: unless-stopped
