@@ -11,6 +11,7 @@ services:
       - "aria2-pro:aria2-pro"
     command: --port 6880 --ipv6
     network_mode: host
+    
   aria2-pro:
       image: p3terx/aria2-pro
       environment:
@@ -32,4 +33,3 @@ services:
 # If you use host network mode, then no port mapping is required.
 # This is the easiest way to use IPv6 networks.
       network_mode: host
-      restart: unless-stopped
