@@ -1,2 +1,2 @@
 .data
-./config/rclone.conf
+rclone.conf
