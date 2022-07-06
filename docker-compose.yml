@@ -49,6 +49,7 @@ services:
         #restart: always
 
     e5renewx:
+        container_name: e5renewx
         image: gladtbam/ms365_e5_renewx:latest
         volumes:
             - /tmp/onedrive/codespace/renewx/data/deploy:/renewx/Deploy/
