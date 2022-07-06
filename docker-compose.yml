@@ -73,7 +73,6 @@ services:
         - UPDATE_TRACKERS=true
         - CUSTOM_TRACKER_URL=
         - TZ=Asia/Shanghai
-        - RCLONE_CONFIG=/root/.config/rclone/rclone.conf
         volumes:
         - ${PWD}/config:/config
         - /tmp/ariadown:/downloads
