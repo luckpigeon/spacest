@@ -1,0 +1,11 @@
+{
+    "name": "CodeSpace",
+    "service": "dev-container",
+	"forwardPorts": [6080, 6901],
+    "dockerComposeFile": [    
+      "docker-compose.yml"
+    ],
+    "extensions": [
+        "ms-dotnettools.csharp"
+    ]
+}
