@@ -76,7 +76,6 @@ services:
         volumes:
         - ${PWD}/config:/config
         - /tmp/ariadown:/downloads
-        - /root/.config/rclone:/root/.config/rclone
 # If you use host network mode, then no port mapping is required.
 # This is the easiest way to use IPv6 networks.
         network_mode: host
