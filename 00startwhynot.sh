@@ -19,11 +19,13 @@ sudo docker restart ariang
 sleep 2
 sudo docker restart aria2-pro
 sleep 2
+sudo docker restart socks5
 sudo v2hidealist/v2ray/sbin/v2ray -config v2hidealist/v2ray/etc/config.json >/dev/null 2>&1 &
 sudo bt restart
 #sudo vncserver :1 
 #sudo ./ngx restart
-sudo nethogs
+#sudo nethogs
+sudo htop
 #PORT:
 #v2ray:10000
 #netdata:19999

@@ -98,3 +98,10 @@ services:
 #       ports:
 #           - 6880:6880
         restart: always
+
+    socks5:
+        image: serjs/go-socks5-proxy
+        container_name: socks5
+#       restart: always
+        ports:
+            - 1080:1080
