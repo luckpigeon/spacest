@@ -1,6 +1,7 @@
 sudo zerotier-one -d
 sleep 2
-sudo rm -rf /tmp/onedrive
+if [ ! -d "/tmp/onedrive" ];then
+#sudo rm -rf /tmp/onedrive
 sudo rm -rf /tmp/rclone
 sudo mkdir /tmp/ariadown
 sudo mkdir /tmp/rclone
@@ -25,6 +26,7 @@ sudo bt restart
 #sudo vncserver :1 
 #sudo ./ngx restart
 #sudo nethogs
+fi
 sudo htop
 #PORT:
 #v2ray:10000
@@ -37,3 +39,4 @@ sudo htop
 #ngxcloud:8090
 #e5renew:1066
 #ariang:6880
+echo done 
