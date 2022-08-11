@@ -1,6 +1,19 @@
 version: '3.5'
 
 services:
+    zerotier:
+        container_name: zerotier
+        image: zerotier/zerotier:latest
+        devices:
+          - /dev/net/tun
+        network_mode: host
+        volumes:
+          - /var/lib/zerotier-one:/var/lib/zerotier-one
+        cap_add:
+          - NET_ADMIN
+          - SYS_ADMIN
+        restart: always
+      
     ubuntu-xfce-vnc:
         container_name: ubuntu
         image: imlala/ubuntu-xfce-vnc-novnc:latest

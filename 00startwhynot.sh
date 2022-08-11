@@ -1,4 +1,4 @@
-sudo zerotier-one -d
+sudo docker restart zerotier
 sleep 2
 if [ ! -d "/tmp/onedrive" ];then
 #sudo rm -rf /tmp/onedrive
