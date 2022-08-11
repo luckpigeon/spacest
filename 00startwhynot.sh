@@ -17,6 +17,7 @@ sleep 2
 sudo docker restart ubuntu
 sleep 2
 sudo docker restart ariang
+sudo docker restart alist
 sleep 2
 sudo docker restart aria2-pro
 sleep 2
