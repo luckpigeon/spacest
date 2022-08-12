@@ -128,4 +128,20 @@ services:
         volumes: 
             - /tmp/onedrive/codespace/alist:/opt/alist/data
             - /tmp/alist:/opt/alist/data/temp
-            - /tmp/onedrive:/opt/alist/onedrive
+            - /tmp/onedrive:/opt/alist/onedrive             
+
+    portainer-agent:
+        container_name: portainer-edge-agent 
+        image: portainer/agent:2.14.2
+        environment:
+        - EDGE=1
+        - EDGE_ID=20dc56f8-0d6f-4db9-80dc-2fd7b225c88d
+        - EDGE_KEY=aHR0cHM6Ly8xNzIuMjIuNjguMjg6OTQ0M3wxNzIuMjIuNjguMjg6ODAwMHw4NDpiOToxZTpkNDpiZTo2ZDo2ZDo5NjpkNDpjNDozMjplYTpiYzo5Mzo1NzoyY3w3
+        - EDGE_INSECURE_POLL=1
+        volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+        - /var/lib/docker/volumes:/var/lib/docker/volumes
+        - /:/host
+        - portainer_agent_data:/data
+        network_mode: bridge
+        restart: always

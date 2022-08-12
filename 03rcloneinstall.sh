@@ -1,5 +1,5 @@
 sudo -i 
-apt-get install fuse
+apt-get install fuse -y
 #sudo curl https://rclone.org/install.sh | sudo bash
 #这个文件是用来帮助我自动安装 macos-docker 的
 #启动命令为cd macos && docker-compose up -d
