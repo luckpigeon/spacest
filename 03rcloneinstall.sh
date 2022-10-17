@@ -4,7 +4,8 @@ apt-get install fuse
 #这个文件是用来帮助我自动安装 macos-docker 的
 #启动命令为cd macos && docker-compose up -d
 #sudo mkdir -p /root/.config/rclone/
-#sudo unzip -P ${{ secrets.PASSWD }} rclone.zip -d /root/.config/rclone/
+#sudo unzip -P $PASSWD rclone.zip -d /root/.config/rclone/
+#sudo unzip -P $PASSWD rclone.zip -d $HOME/.config/rclone/
 sudo rclone lsf e5:/codespace/macos-docker/ > "rclone5dir.log"
 sudo rclone copy e5:/codespace/macos-docker/firmware/ ./macos/firmware/ -P
 sudo rclone copy e5:/codespace/macos-docker/docker-compose.yml ./macos -P

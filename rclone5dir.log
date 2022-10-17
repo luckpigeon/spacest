@@ -1,2 +1,8 @@
-2022/07/05 19:07:18 NOTICE: Config file "/config/rclone.conf" not found - using defaults
-2022/07/05 19:07:18 Failed to create file system for "e5:/codespace/macos-docker/": didn't find section in config file
+BaseSystem.img
+Dockerfile
+ESP.qcow2
+MyDisk.qcow2
+README.md
+docker-compose.yml
+firmware/
+headless.sh

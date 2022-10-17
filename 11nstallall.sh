@@ -8,7 +8,7 @@ sudo zerotier-cli join ${ZERO}
 #在这之前我们先更新apt源
 sudo sh 10aptupdate.sh
 #02文件为我安装btpannel (x)
-sudo wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh && sudo bash install.sh ed8484bec
+#sudo wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh && sudo bash install.sh ed8484bec
 sudo bt 14 > 09firststart.md && sudo rm -rf install.sh
 #sudo apt install glances -y
 #sudo glances -w

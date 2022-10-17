@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.5'
 
 services:
     ubuntu-xfce-vnc:
@@ -49,7 +49,7 @@ services:
         #restart: always
 
     e5renewx:
-        container_name: e5renewx
+        container_name: e5renew
         image: gladtbam/ms365_e5_renewx:latest
         volumes:
             - /tmp/onedrive/codespace/renewx/data/deploy:/renewx/Deploy/
@@ -85,14 +85,9 @@ services:
 #       - 6800:6800
 #       - 6888:6888
 #       - 6888:6888/udp
-        restart: unless-stopped
+        #restart: unless-stopped
 # Since Aria2 will continue to generate logs, limit the log size to 1M to prevent your hard disk from running out of space.
-    socks5:
-        image: serjs/go-socks5-proxy
-        container_name: socks5
-#       restart: always
-        ports:
-            - 1080:1080
+
 # AriaNg is just a static web page, usually you only need to deploy on a single host.
     AriaNg:
         container_name: ariang
@@ -103,3 +98,21 @@ services:
 #       ports:
 #           - 6880:6880
         restart: always
+
+    socks5:
+        image: serjs/go-socks5-proxy
+        container_name: socks5
+#       restart: always
+        ports:
+            - 1080:1080
+
+    alist:
+        image: xhofe/alist:latest
+        container_name: alist
+#       restart: always
+        ports:
+            - 5244:5244
+        volumes: 
+            - /tmp/onedrive/codespace/alist:/opt/alist/data
+            - /tmp/alist:/opt/alist/data/temp
+            - /tmp/onedrive:/opt/alist/onedrive
